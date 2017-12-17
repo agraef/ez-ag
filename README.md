@@ -75,6 +75,12 @@ in your favorite DAW. In the latter case you will want to route Pd's MIDI
 output #1 into your DAW (note that output #2 only carries the control data
 from the Wing if it's being passed through).
 
+For a minimum setup (no DAW control, no Guitar Wing) you can just hook up the
+EZ-AG and your MIDI synthesizer to Pd's first MIDI input and output,
+respectively, and be done with it.
+
+### EZ-AG Setup
+
 You will probably want to leave local control enabled on the EZ-AG (it's the
 default) to get naturally-sounding hammer-ons and pull-offs. (Note that the
 EZ-AG doesn't do pull-offs to empty strings. That's a limitation of the device
@@ -201,8 +207,6 @@ MIDI Control Surface in Ardour's preferences accordingly.
 
 ## Reporting Bugs
 
-I have to admit that the initial setup is somewhat complicated at present, but
-I don't see how to further simplify it without loosing some useful or even
-essential functionality provided by the patch. In any case, if you have any
-comments, ideas for improvements or suggested code changes then feel free to
-mail me at <aggraef@gmail.com> or toss me a pull request over at Github.
+If you have any comments, ideas for improvements or suggested code changes
+then feel free to mail me at <aggraef@gmail.com> or toss me a pull request
+over at Github.
