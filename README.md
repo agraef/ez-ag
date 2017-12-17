@@ -9,7 +9,13 @@ checking that the device is connected and working properly.
 
 ![EZ-AG patch](ez-ag-screenie.png)  
 
-[Yamaha EZ-AG]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
+[Yamaha EZ-AG]: https://www.bhphotovideo.com/c/product/353860-REG/Yamaha_EZAG_EZ_AG_Self_Teaching_Guitar.html
+
+Note that Yamaha doesn't list (let alone sell) these any more, but with some
+luck you'll be able to find one on Amazon or Ebay. There's an extensive [KVR
+thread][] about the EZ-AG which you can refer to for further details.
+
+[KVR thread]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
 
 The EZ-AG is in fact a full-blown MIDI guitar controller, but in its default
 mode it is a bit hard to play in this way unless you have a *very* clean
