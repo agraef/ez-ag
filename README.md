@@ -114,8 +114,8 @@ have to further increase the delay time.
 
 The "pass through other MIDI" toggle causes all control and program change
 messages emitted by the EZ-AG to be passed through unchanged. In particular,
-this lets you use the buttons on the EZ-AG to change the volume and the
-selected instrument sound.
+this lets you use the buttons on the EZ-AG to change the selected instrument
+sound.
 
 The "panic" button lets you stop all sounding MIDI notes immediately, provided
 that your MIDI synthesizer properly implements cc 123 (Qsynth does). This is
