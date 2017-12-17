@@ -28,8 +28,8 @@ time.
 Another minor shortcoming of the EZ-AG is that, unlike the EZ-EG, it doesn't
 have a facility to do pitch bends. The patch makes up for that by making it
 possible to simulate pitch bends via a sustain pedal (note that you'll have to
-hook up the pedal through a MIDI keyboard, though, since the EZ-AG itself
-doesn't have a sustain pedal input).
+hook up the pedal through a MIDI keyboard since the EZ-AG itself doesn't have
+a sustain pedal input).
 
 If you have the [Livid Guitar Wing][], you can also do pitch bends using the
 Wing's big fader (cc 3). The Wing will also let you change instruments (GM
