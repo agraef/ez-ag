@@ -12,8 +12,9 @@ checking that the device is connected and working properly.
 [Yamaha EZ-AG]: https://www.bhphotovideo.com/c/product/353860-REG/Yamaha_EZAG_EZ_AG_Self_Teaching_Guitar.html
 
 Note that Yamaha doesn't list (let alone sell) these any more, but with some
-luck you'll be able to find one on Amazon or Ebay. There's an extensive [KVR
-thread][] about the EZ-AG which you can refer to for further details.
+luck you'll be able to find one on Amazon or Ebay. There's an
+extensive [KVR thread][] about the EZ-AG and EZ-EG which you can refer to for
+further details.
 
 [KVR thread]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
 
