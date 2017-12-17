@@ -1,0 +1,16 @@
+#N canvas 504 323 450 300.062 10;
+#X obj 18 14 inlet;
+#X obj 18 36 unpack f f f;
+#X obj 18 58 +;
+#X obj 57 14 inlet;
+#X obj 18 80 max 12;
+#X obj 18 102 pack f f f;
+#X obj 18 124 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 5 1;
+#X connect 1 2 5 2;
+#X connect 2 0 4 0;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;

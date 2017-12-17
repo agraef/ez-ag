@@ -1,0 +1,153 @@
+# EZ-AG Helper Patch
+
+This is a little helper patch which aims to make it easier to use Yamaha's
+"learning guitar", the [Yamaha EZ-AG][], as a MIDI controller. (It should also
+work with its sibling, the Yamaha EZ-EG, but I haven't tested that since I
+don't own one of these.) The patch also displays the strings and notes which
+are currently playing, which should be useful as visual feedback and for
+checking that the device is connected and working properly.
+
+[Yamaha EZ-AG]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
+
+The EZ-AG is in fact a full-blown MIDI guitar controller, but in its default
+mode it is a bit hard to play in this way unless you have a *very* clean
+playing style. This Pd patch makes that a bit easier by filtering out
+low-velocity notes and spurious double notes which often turn up in the
+EZ-AG's MIDI output when pushing fret buttons and picking strings at the same
+time.
+
+Another minor shortcoming of the EZ-AG is that, unlike the EZ-EG, it doesn't
+have a facility to do pitch bends. The patch makes up for that by making it
+possible to simulate pitch bends via a sustain pedal (note that you'll have to
+hook up the pedal through a MIDI keyboard, though, since the EZ-AG itself
+doesn't have an input for sustain pedals).
+
+If you have the [Livid Guitar Wing][], you can also do pitch bends using the
+Wing's big fader (cc1). The Wing will also let you change instruments (GM
+patches) and transpose by octaves up/down using some of its buttons (see below
+for details). The EZ-AG and the Wing actually make for a very nice combo,
+since the Wing will give you some nice button and fader controls which the
+EZ-AG lacks. If you don't have the Wing, then you should still be able to do
+all these things by operating the corresponding GUI controls in the gwing
+subpatch, but it will be less convenient. Instruments can also be changed
+using the corresponding buttons on the EZ-AG itself (press SOUND SELECT and
+then +/-), but this will not show in the GUI controls of the patch.
+
+[Livid Guitar Wing]: http://lividinstruments.com/products/guitar-wing/
+
+## Setting Up
+
+You'll need the [Purr Data][] flavor of Pd to run this patch. (Much of the
+functionality may also work in vanilla Pd, but no guarantees.) You'll also
+need [Pd-Lua][] since some of the internal functionality of the patch is
+currently written in Lua.
+
+[Purr Data]: https://agraef.github.io/purr-data/
+[Pd-Lua]: https://github.com/agraef/pd-lua
+
+Hook up the EZ-AG to Pd's MIDI input and output #1, and the Guitar Wing (if
+you have it) to Pd's MIDI input and output #2. The patch doesn't generate any
+sound on its own, it just outputs MIDI, so you'll also need a GM-compatible
+synthesizer which should be hooked up to Pd's MIDI output #1. I recommend
+Qsynth/Fluidsynth for that purpose, but of course you can also use any
+GM-compatible synthesizer or a synth plugin in your favorite DAW.
+
+You will probably want to leave local control enabled on the EZ-AG (it's the
+default) to get naturally-sounding hammer-ons and pull-offs. (Note that the
+EZ-AG doesn't do pull-offs to empty strings. That's a limitation of the device
+and so there's nothing our helper patch can do about it.) On the other hand,
+it may become easier to play chords if you turn local control off; this can
+only be done manually on the device by pressing the CAPO and TUNING buttons at
+the same time and using the "-" button so that the EZ-AG's LED display shows
+"Off". This disables hammer-ons and pull-offs and also turns off the EZ-AG's
+local sound generation. (Note that you can also use a blind Jack on the
+EZ-AG's phones out if needed, in order to disable direct sound from the guitar
+with local control enabled.)
+
+Another important configuration item on the EZ-AG is the clock setting. The
+EZ-AG should be set to use an *external* clock (the internal clock is the
+default), if you do not want to run the risk of accidentally hitting the DEMO
+START/STOP button and have the device conveniently start playing one of its
+demo songs when you're in the middle of a guitar solo. The patch will try to
+set this automatically for you by sending the appropriate sysex message, but
+this requires that Pd's MIDI output #1 is connected to the EZ-AG and the
+device is on when the patch is loaded. In any case, you can also do this
+manually by pressing the TEMPO and VOLUME buttons at the same time and using
+the "-" button so that the EZ-AG's LED display shows "Etr".
+
+## Usage
+
+With those preparations all done and the EZ-AG turned on, just load the patch
+and start playing. You should see the strings and notes being played in the
+GUI, and hear the output from the patch through your MIDI synthesizer.
+
+There are various settings in the patch you can fiddle with. First and
+foremost, there are two toggles for the velocity threshold and the note
+filtering, which should normally be enabled by default. You can turn these off
+to get the MIDI note data exactly as the EZ-AG sends it. Normally, you will
+want both of these to be turned on, though, which does two things:
+
+- The velocity threshold causes removal of the "silent" notes that the EZ-AG
+  produces when operating the fret without actually picking the strings.
+  
+- The note filter prevents double note-ons for the same note on the same
+  string which often occur if you're pushing the fret button for a note and
+  pick that string not exactly at the same time (which may well happen if
+  you're a lousy guitar player like me).
+  
+The latter is only an issue if the EZ-AG has local control on (see above) so
+that hammer-ons and pull-offs are enabled. The time threshold used to detect
+these double notes can be set using the delay time argument of the
+"ez-notefilters" abstraction. The default of 150 msecs works for me, but if
+you have a very clean playing style then you might want to reduce this value.
+On the other hand, if your technique is even worse than mine then you might
+have to further increase the delay time.
+
+The "pass through other MIDI" toggle causes all control and program change
+messages emitted by the EZ-AG to be passed through unchanged. In particular,
+this lets you use the buttons on the EZ-AG to change the volume and the
+selected instrument sound.
+
+The "panic" button lets you stop all sounding MIDI notes immediately, provided
+that your MIDI synthesizer properly implements cc 123 (Qsynth does). This is
+most useful for killing off hanging notes, should you ever run into these.
+
+Finally, if you have a sustain pedal (cc 64) hooked up to your MIDI system (as
+already mentioned, you'll have to do that through your MIDI keyboard), then
+this can be used to emulate pitch bends if you turn on the corresponding
+toggle in the patch. This is a rather crude emulation (it quickly ramps up one
+semitone when pressing the pedal, and goes back to zero when releasing it);
+better control is provided through the Guitar Wing, see below.
+
+## Guitar Wing Controls
+
+The "gwing" subpatch provides support for Livid's Guitar Wing controller. The
+provided functions are:
+
+- The big touch fader of the Wing (cc 1) does pitch bends. It will
+  automatically reset itself to zero as soon as you stop touching that
+  fader. The radio button above the gwing patch lets you configure the maximum
+  amount of pitch bend that you want to have. It defaults to one semitone but
+  can be set to anything between zero and four quarter tones. If zero, pitch
+  bends are disabled. (This will only bend up right now; if needed, you can
+  change the corresponding logic in the gwing subpatch.)
+  
+- The direction buttons (the green triangle-shaped ones) can be used to switch
+  between GM patches (instrument sounds). Also, the four little side buttons
+  can be used to change the GM program number in larger increments. The
+  current setting is shown in the "prog" field, as well as the two dropdown
+  lists at the bottom of the abstraction, and can also be changed there.
+  
+- The first white pad on the Wing (the topmost one) is equivalent to clicking
+  the "panic" button in the patch, i.e., it turn off all sounding notes. The
+  second and third pads can be used to transpose the MIDI note input from the
+  EZ-AG (same as the +/-1 oct buttons in the patch). Note that this is
+  independent from the TUNING button on the EZ-AG. Moreover, the EZ-AG
+  automagically transposes notes depending on the instrument sound chosen with
+  the SOUND SELECT button on the device, so that, e.g., if you pick a bass
+  sound on the EZ-EG then the note input from the EZ-AG will already be an
+  octave lower than normal.
+  
+- The remaining controls on the Wing aren't assigned right now, but might be
+  in the future.
+  
