@@ -67,7 +67,7 @@ to Pd's MIDI input and output #3. The patch is hard-wired to work like this,
 so unless you're prepared to edit the patch you'll need to follow this
 connection layout.
 
-The patch doesn't generate any sound on its own, it just outputs MIDI, so
+The patch doesn't generate any sound of its own, it just outputs MIDI, so
 you'll also need a GM-compatible synthesizer which should be hooked up to Pd's
 MIDI output #1. I recommend Qsynth/Fluidsynth for that purpose, but of course
 you can also use any GM-compatible synthesizer or a GM-compatible synth plugin
@@ -153,7 +153,7 @@ releasing it); better control is provided through the Guitar Wing, see below.
 The "gwing" subpatch provides support for Livid's Guitar Wing controller. The
 provided functions are listed below.
 
-![Yamaha EZ-AG](wing.png)  
+![Guitar Wing](wing.png)  
 
 - The big touch fader of the Wing (cc 3, fader 8 in the figure above) does
   pitch bends. It will automatically reset itself to zero as soon as you stop
