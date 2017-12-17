@@ -18,6 +18,8 @@ further details.
 
 [KVR thread]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
 
+![Yamaha EZ-AG](ez-ag.jpg)  
+
 The EZ-AG is in fact a full-blown MIDI guitar controller, but in its default
 mode it is a bit hard to play in this way unless you have a *very* clean
 playing style. This Pd patch makes that a bit easier by filtering out
@@ -144,34 +146,36 @@ releasing it); better control is provided through the Guitar Wing, see below.
 
 ## Guitar Wing Controls
 
+![Yamaha EZ-AG](wing.png)  
+
 The "gwing" subpatch provides support for Livid's Guitar Wing controller. The
 provided functions are:
 
-- The big touch fader of the Wing (cc 3) does pitch bends. It will
-  automatically reset itself to zero as soon as you stop touching that
-  fader. The radio button above the gwing patch lets you configure the maximum
-  amount of pitch bend that you want to have. It defaults to one semitone but
-  can be set to anything between zero and four quarter tones. If zero, pitch
-  bends are disabled. (This will only bend up right now; if needed, you can
-  change the corresponding logic in the gwing subpatch. E.g., you might want
-  to assign the little faders cc 1 and cc 2 instead and allow for both upward
-  and downward bends.)
+- The big touch fader of the Wing (cc 3, fader 8 in the figure above) does
+  pitch bends. It will automatically reset itself to zero as soon as you stop
+  touching that fader. The radio button above the gwing patch lets you
+  configure the maximum amount of pitch bend that you want to have. It
+  defaults to one semitone but can be set to anything between zero and four
+  quarter tones. If zero, pitch bends are disabled. (This will only bend up
+  right now; if needed, you can change the corresponding logic in the gwing
+  subpatch. E.g., you might want to assign the little faders cc 1 and cc 2
+  instead and allow for both upward and downward bends.)
   
-- The direction buttons (the green triangle-shaped ones) can be used to switch
-  between GM patches (instrument sounds). Also, the four little side buttons
-  can be used to change the GM program number in larger increments. The
+- The direction buttons (buttons 9 and 10) can be used to switch between GM
+  patches (instrument sounds). Also, the four little side buttons (buttons
+  15-18) can be used to change the GM program number in larger increments. The
   current setting is shown in the "prog" field, as well as the two dropdown
   lists at the bottom of the abstraction, and can also be changed there.
   
-- The first white pad on the Wing (the topmost one) is equivalent to clicking
-  the "panic" button in the patch, i.e., it turns off all sounding notes. The
-  second and third pads can be used to transpose the MIDI note input from the
-  EZ-AG (same as the +/-1 oct buttons in the patch). Note that this is
-  independent from the TUNING button on the EZ-AG. Moreover, the EZ-AG
-  automagically transposes notes depending on the instrument sound chosen with
-  the SOUND SELECT button on the device, so that, e.g., if you pick a bass
-  sound on the EZ-EG then the note input from the EZ-AG will already be an
-  octave lower than normal.
+- The first white pad on the Wing (button 3) is equivalent to clicking the
+  "panic" button in the patch, i.e., it turns off all sounding notes. The
+  second and third pads (buttons 4 and 5) can be used to transpose the MIDI
+  note input from the EZ-AG (same as the +/-1 oct buttons in the patch). Note
+  that this is independent from the TUNING button on the EZ-AG. Moreover, the
+  EZ-AG automagically transposes notes depending on the instrument sound
+  chosen with the SOUND SELECT button on the device, so that, e.g., if you
+  pick a bass sound on the EZ-EG then the note input from the EZ-AG will
+  already be an octave lower than normal.
   
 - The remaining controls on the Wing aren't assigned right now, but might be
   in the future.
