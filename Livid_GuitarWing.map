@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArdourMIDIBindings version="1.0.0" name="Livid Guitar Wing">
+
+<!-- MIDI Mapping for Livid Guitar Wing -->
+
+	<DeviceInfo motorised="no"/>
+	<Binding channel="1" note="42" function="transport-roll"/>
+	<Binding channel="1" note="43" function="transport-stop"/>
+	<!-- <Binding channel="1" note="44" function="toggle-rec-enable"/> -->
+	<Binding channel="1" note="44" action="Transport/ToggleClick"/>
+	<Binding channel="1" note="45" function="loop-toggle"/>
+
+</ArdourMIDIBindings>
+
