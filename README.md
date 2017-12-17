@@ -52,10 +52,10 @@ but this will not show in the GUI controls of the patch.
 
 You'll need the [Purr Data][] flavor of Pd to run this patch. You'll also
 need [Pd-Lua][] since some of the internal functionality of the patch is
-currently written in Lua. (The patch may also work in vanilla Pd if you have
-Pd-Lua installed, but this hasn't been tested. In any case making the patch
-work flawlessly with vanilla is surely possible, but it will require some
-changes.)
+currently written in Lua. (There's a good chance that most of the essential
+functionality of the patch will work in vanilla Pd, too, if you have Pd-Lua
+installed, but this hasn't been tested. In any case making the patch work
+flawlessly with vanilla will most likely require some changes.)
 
 [Purr Data]: https://agraef.github.io/purr-data/
 [Pd-Lua]: https://github.com/agraef/pd-lua
