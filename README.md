@@ -18,8 +18,6 @@ further details.
 
 [KVR thread]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
 
-![Yamaha EZ-AG](ez-ag.jpg)  
-
 The EZ-AG is in fact a full-blown MIDI guitar controller, but in its default
 mode it is a bit hard to play in this way unless you have a *very* clean
 playing style. This Pd patch makes that a bit easier by filtering out
@@ -146,10 +144,10 @@ releasing it); better control is provided through the Guitar Wing, see below.
 
 ## Guitar Wing Controls
 
-![Yamaha EZ-AG](wing.png)  
-
 The "gwing" subpatch provides support for Livid's Guitar Wing controller. The
-provided functions are:
+provided functions are listed below.
+
+![Yamaha EZ-AG](wing.png)  
 
 - The big touch fader of the Wing (cc 3, fader 8 in the figure above) does
   pitch bends. It will automatically reset itself to zero as soon as you stop
@@ -182,19 +180,22 @@ provided functions are:
   
 Finally, you can also bypass all of this and route the control data from the
 Wing to your DAW instead. To these ends, enable the "thru" toggle in the gwing
-subpatch and hook up your DAW's control input to Pd's MIDI output #2.
+subpatch and hook up your DAW's control input to Pd's MIDI output #2. (If
+nothing is hooked up to this MIDI output then the "thru" toggle will
+effectively disable all local processing of the Guitar Wing data.)
 
 ## Ardour Support
 
-As a bonus, I've added an [Ardour][] MIDI map (Livid_GuitarWing.map in the
-sources) for using the Wing in this latter fashion. It assigns the four blue
-buttons on the bottom of the Wing to some of Ardour's transport controls (at
-present: start, stop, as well as the metronome click and loop toggles; you may
-want to adjust this to your liking or use it as a blueprint for mapping the
-controls for your favorite DAW). The rest of the controls are currently not
-assigned and may be used with Ardour's MIDI learn functionality. Note that to
-make this work, you'll have to configure the Generic MIDI Control Surface in
-Ardour's preferences accordingly.
+As a bonus, I've thrown in an [Ardour][] MIDI map (Livid_GuitarWing.map in the
+sources), which can be used to hook up the Wing to Ardour's Generic MIDI
+Control, either directly or through the pass-through option of the gwing
+subpatch secribed above. It assigns buttons 11-14 on the Wing to some of
+Ardour's transport controls (at present: start, stop, as well as the metronome
+click and loop toggles; you may want to adjust this to your liking or employ
+it as a blueprint for doing your own map for your favorite DAW). The rest of
+the controls are currently not assigned and may be used with Ardour's MIDI
+learn functionality. To make this work, you'll have to configure the Generic
+MIDI Control Surface in Ardour's preferences accordingly.
 
 [Ardour]: https://ardour.org/
 
