@@ -148,7 +148,7 @@ provided functions are:
   lists at the bottom of the abstraction, and can also be changed there.
   
 - The first white pad on the Wing (the topmost one) is equivalent to clicking
-  the "panic" button in the patch, i.e., it turn off all sounding notes. The
+  the "panic" button in the patch, i.e., it turns off all sounding notes. The
   second and third pads can be used to transpose the MIDI note input from the
   EZ-AG (same as the +/-1 oct buttons in the patch). Note that this is
   independent from the TUNING button on the EZ-AG. Moreover, the EZ-AG
