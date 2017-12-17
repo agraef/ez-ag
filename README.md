@@ -195,7 +195,7 @@ effectively disable all local processing of the Guitar Wing data.)
 As a bonus, I've thrown in an [Ardour][] MIDI map (Livid_GuitarWing.map in the
 sources), which can be used to hook up the Wing to Ardour's Generic MIDI
 Control, either directly or through the pass-through option of the gwing
-subpatch secribed above. It assigns buttons 11-14 on the Wing to some of
+subpatch described above. It assigns buttons 11-14 on the Wing to some of
 Ardour's transport controls (at present: start, stop, as well as the metronome
 click and loop toggles; you may want to adjust this to your liking or employ
 it as a blueprint for doing your own map for your favorite DAW). The rest of
