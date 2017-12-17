@@ -32,7 +32,7 @@ hook up the pedal through a MIDI keyboard, though, since the EZ-AG itself
 doesn't have an input for sustain pedals).
 
 If you have the [Livid Guitar Wing][], you can also do pitch bends using the
-Wing's big fader (cc1). The Wing will also let you change instruments (GM
+Wing's big fader (cc 3). The Wing will also let you change instruments (GM
 patches) and transpose by octaves up/down using some of its buttons (see below
 for details). The EZ-AG and the Wing actually make for a very nice combo,
 since the Wing will give you some nice button and fader controls which the
@@ -133,7 +133,7 @@ better control is provided through the Guitar Wing, see below.
 The "gwing" subpatch provides support for Livid's Guitar Wing controller. The
 provided functions are:
 
-- The big touch fader of the Wing (cc 1) does pitch bends. It will
+- The big touch fader of the Wing (cc 3) does pitch bends. It will
   automatically reset itself to zero as soon as you stop touching that
   fader. The radio button above the gwing patch lets you configure the maximum
   amount of pitch bend that you want to have. It defaults to one semitone but
