@@ -7,7 +7,7 @@ don't own one of these.) The patch also displays the strings and notes which
 are currently playing, which should be useful as visual feedback and for
 checking that the device is connected and working properly.
 
-![EZ-AG patch](ez-ag-screenie.png)\ 
+![EZ-AG patch](ez-ag-screenie.png)  
 
 [Yamaha EZ-AG]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
 
