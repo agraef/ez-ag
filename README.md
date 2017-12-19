@@ -31,12 +31,12 @@ possible to simulate pitch bends via a sustain pedal (note that you'll have to
 hook up the pedal through a MIDI keyboard since the EZ-AG itself doesn't have
 a sustain pedal input).
 
-If you have the [Livid Guitar Wing][], you can also do pitch bends using the
-Wing's big fader (cc 3). The Wing will also let you change instruments (GM
-patches) and transpose by octaves up/down using some of its buttons (see below
-for details). Optionally, it is also possible to simply pass through all
-control data from the Wing so that you can route it, e.g., to your DAW program
-instead.
+If you have the [Livid Guitar Wing][], you can also do pitch bends using
+either the uppermost drum pad (cc 36) or using the Wing's big fader (cc
+3). The Wing will also let you change instruments (GM patches) and transpose
+by octaves up/down using some of its buttons (see below for details).
+Optionally, it is also possible to pass through all control data from the Wing
+so that you can route it, e.g., to your DAW program instead.
 
 [Livid Guitar Wing]: http://lividinstruments.com/products/guitar-wing/
 
@@ -150,8 +150,9 @@ releasing it); better control is provided through the Guitar Wing, see below.
 
 ## Guitar Wing Controls
 
-The "gwing" subpatch provides support for Livid's Guitar Wing controller. The
-provided functions are listed below.
+The "gwing" subpatch provides support for Livid's Guitar Wing controller.
+There is a toggle in the subpatch to enable this functionality, which should
+be on by default. The provided functions are listed below.
 
 ![Guitar Wing](wing.png)  
 
@@ -165,30 +166,36 @@ provided functions are listed below.
   subpatch. E.g., you might want to assign the little faders cc 1 and cc 2
   instead and allow for both upward and downward bends.)
   
+- The first white pad on the Wing (button 3) provides an alternative way to
+  control pitch bends. The pads are touch-sensitive, so applying different
+  amounts of pressure on button 3 will translate to different pitch bend
+  values. This is a bit harder to control than the big fader, but may be more
+  convenient to do quick pitch bends.
+
+- The second and third pads (buttons 4 and 5) can be used to transpose the
+  MIDI note input from the EZ-AG (same as the +/-1 oct buttons in the patch).
+  Note that this is independent from the TUNING button on the EZ-AG. Moreover,
+  the EZ-AG automagically transposes notes depending on the instrument sound
+  chosen with the SOUND SELECT button on the device, so that, e.g., if you
+  pick a bass sound on the EZ-EG then the note input from the EZ-AG will
+  already be an octave lower than normal.
+  
+- The fourth pad (button 6) is equivalent to clicking the "panic" button in
+  the patch, i.e., it turns off all sounding notes.
+  
 - The direction buttons (buttons 9 and 10) can be used to switch between GM
   patches (instrument sounds). Also, the four little side buttons (buttons
   15-18) can be used to change the GM program number in larger increments. The
   current setting is shown in the "prog" field, as well as the two dropdown
   lists at the bottom of the abstraction, and can also be changed there.
   
-- The first white pad on the Wing (button 3) is equivalent to clicking the
-  "panic" button in the patch, i.e., it turns off all sounding notes. The
-  second and third pads (buttons 4 and 5) can be used to transpose the MIDI
-  note input from the EZ-AG (same as the +/-1 oct buttons in the patch). Note
-  that this is independent from the TUNING button on the EZ-AG. Moreover, the
-  EZ-AG automagically transposes notes depending on the instrument sound
-  chosen with the SOUND SELECT button on the device, so that, e.g., if you
-  pick a bass sound on the EZ-EG then the note input from the EZ-AG will
-  already be an octave lower than normal.
-  
 - The remaining controls on the Wing aren't assigned right now, but might be
   in the future.
-  
-Finally, you can also bypass all of this and route the control data from the
-Wing to your DAW instead. To these ends, enable the "thru" toggle in the gwing
-subpatch and hook up your DAW's control input to Pd's MIDI output #2. (If
-nothing is hooked up to this MIDI output then the "thru" toggle will
-effectively disable all local processing of the Guitar Wing data.)
+
+All this special processing can also be turned off with the "enable" toggle.
+Finally, you can also route the control data from the Wing to your DAW. To
+these ends, enable the "thru" toggle in the gwing subpatch and hook up your
+DAW's control input to Pd's MIDI output #2.
 
 ## Ardour Support
 
