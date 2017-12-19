@@ -204,7 +204,7 @@ sources), which can be used to hook up the Wing to Ardour's Generic MIDI
 Control, either directly or through the pass-through option of the gwing
 subpatch described above. To make this work, you'll have to copy the
 Livid_GuitarWing.map file to Ardour's midi_maps directory (on Linux this is
-under .config/ardour5/midi_maps/, please check the Ardour manual for
+under ~/.config/ardour5/midi_maps/, please check the Ardour manual for
 directions on Mac and Windows) and configure the Generic MIDI Control Surface
 in Ardour's preferences accordingly. To do this, open the "Control Surfaces"
 section in Ardour's preferences, enable "Generic MIDI", click "Show Protocol
@@ -221,10 +221,11 @@ controls are currently not assigned and may be used with Ardour's MIDI learn
 functionality.
 
 When running the Pd patch, instead of hooking up the Guitar Wing directly to
-Ardour's control input, you can also use Pd's second MIDI output as input to
-Ardour's generic MIDI control instead. This will filter out the note messages
-associated with the Wing's touch faders, which may otherwise get in the way of
-Ardour's MIDI learn facility.
+Ardour's control input, you can also switch on the "thru" toggle in the gwing
+subpatch and use Pd's second MIDI output as input to Ardour's generic MIDI
+control instead. This has the added benefit that it will filter out the note
+messages associated with the Wing's touch faders, which may otherwise get in
+the way of Ardour's MIDI learn facility.
 
 ## Reporting Bugs
 
