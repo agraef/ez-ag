@@ -32,11 +32,11 @@ hook up the pedal through a MIDI keyboard since the EZ-AG itself doesn't have
 a sustain pedal input).
 
 If you have the [Livid Guitar Wing][], you can also do pitch bends using
-either the uppermost drum pad (cc 36) or using the Wing's big fader (cc
-3). The Wing will also let you change instruments (GM patches) and transpose
-by octaves up/down using some of its buttons (see below for details).
-Optionally, it is also possible to pass through all control data from the Wing
-so that you can route it, e.g., to your DAW program instead.
+either the Wing's big fader (cc 3) or the uppermost drum pad (cc 36). The Wing
+will also let you change instruments (GM patches) and transpose by octaves
+up/down using some of its buttons (see below for details). Optionally, it is
+also possible to pass through all control data from the Wing so that you can
+route it, e.g., to your DAW program instead.
 
 [Livid Guitar Wing]: http://lividinstruments.com/products/guitar-wing/
 
