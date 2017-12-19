@@ -1,4 +1,4 @@
-#N canvas 678 141 641 548.062 10;
+#N canvas 681 170 641 548.062 10;
 #X obj 22 61 poly 2;
 #X obj 22 83 pack f f f;
 #X obj 22 105 route 1 2;
@@ -43,6 +43,8 @@
 #X obj 66 328 mod 12;
 #X obj 174 339 outlet;
 #X obj 22 40 unpack f f;
+#X obj 109 18 r ez-all-notes-off;
+#X msg 109 40 stop;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 0 2 1 2;
@@ -106,3 +108,5 @@
 #X connect 40 0 25 0;
 #X connect 42 0 0 0;
 #X connect 42 1 0 1;
+#X connect 43 0 44 0;
+#X connect 44 0 0 0;

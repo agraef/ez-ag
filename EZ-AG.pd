@@ -1,4 +1,4 @@
-#N canvas 292 210 1137 545.062 10;
+#N canvas 291 196 1137 545.062 10;
 #X text 93 187 ^;
 #X obj 32 233 tgl 25 0 empty empty E 17 7 0 10 -261234 -1 -1 0 1;
 #X obj 74 233 tgl 25 0 empty empty A 17 7 0 10 -262130 -1 -1 0 1;
@@ -114,11 +114,15 @@ by default), f 34;
 #X obj 328 177 s ez-off;
 #N canvas 698 90 450 323 all-notes-off 0;
 #X obj 36 26 inlet;
-#X msg 36 53 0 123 1 \, 0 123 2 \, 0 123 3 \, 0 123 4 \, 0 123 5 \,
+#X msg 36 73 0 123 1 \, 0 123 2 \, 0 123 3 \, 0 123 4 \, 0 123 5 \,
 0 123 6;
-#X obj 36 75 ctlout;
-#X connect 0 0 1 0;
+#X obj 36 95 ctlout;
+#X obj 36 48 t b b;
+#X obj 93 95 s ez-all-notes-off;
+#X connect 0 0 3 0;
 #X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 3 1 4 0;
 #X restore 405 38 pd all-notes-off;
 #X text 222 47 note filter, f 12;
 #X obj 367 263 hradio 15 0 1 5 empty empty empty 0 -8 0 10 -262144
