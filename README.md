@@ -1,5 +1,9 @@
 # EZ-AG Helper Patch
 
+Copyright (c) 2017 by Albert Gräf <aggraef@gmail.com>, licensed under the GPL
+v3 or later, please check the accompanying COPYING file for details. Sources
+are availble at <https://github.com/agraef/ez-ag>.
+
 This is a little helper patch which aims to make it easier to use Yamaha's
 "learning guitar", the [Yamaha EZ-AG][], as a MIDI controller. (It should also
 work with its sibling, the Yamaha EZ-EG, but I haven't tested that since I
