@@ -116,6 +116,14 @@ the device is on when the patch is loaded. In any case, you can also do this
 manually by pressing the TEMPO and VOLUME buttons at the same time and using
 the "-" button so that the EZ-AG's LED display shows "Etr".
 
+### Jamstick+ Setup
+
+The Jamstick+ should work fine with the patch as is, using factory settings.
+Just make sure that the device is in multi-channel mode (which it is by
+default). You may also want to use the Jamstick+ app to adjust the pick
+sensitivity settings to your liking (I have mine on the "Minimum" preset for
+best sensitivity, but your mileage may vary).
+
 ## Usage
 
 With those preparations all done and the EZ-AG turned on, just load the patch
