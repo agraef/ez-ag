@@ -5,11 +5,11 @@ v3 or later, please check the accompanying COPYING file for details. Sources
 are availble at <https://github.com/agraef/ez-ag>.
 
 This is a little helper patch which aims to make it easier to use Yamaha's
-"learning guitar", the [Yamaha EZ-AG][], as a MIDI controller. (It should also
-work with its sibling, the Yamaha EZ-EG, but I haven't tested that since I
-don't own one of these.) The patch also displays the strings and notes which
-are currently playing, which should be useful as visual feedback and for
-checking that the device is connected and working properly.
+"learning guitar", the [Yamaha EZ-AG][], as a MIDI controller. It should also
+work with its sibling, the Yamaha EZ-EG (I haven't tested that since I don't
+own one of these). The patch also displays the strings and notes which are
+currently playing, which should be useful as visual feedback and for checking
+that the device is connected and working properly.
 
 ![EZ-AG patch](ez-ag-screenie.png)  
 
@@ -52,6 +52,14 @@ less convenient. Note that instrument sounds can also be changed using the
 corresponding buttons on the EZ-AG itself (press SOUND SELECT and then +/-),
 but this will not show in the GUI controls of the patch.
 
+The latest version of the patch now also has some preliminary support for
+the [Jamstick+][]. Most of the patch has been left unchanged and will work
+just fine with the Jamstick+, but pitch bends are now passed through and the
+D-Pad key combinations Enter+Up/Down can be used to change instruments (GM
+patches).
+
+[Jamstick+]: https://jamstik.com/
+
 ## Setting Up
 
 You'll need the [Purr Data][] flavor of Pd to run this patch. You'll also
@@ -65,11 +73,11 @@ flawlessly with vanilla will most likely require some changes.)
 [Pd-Lua]: https://github.com/agraef/pd-lua
 
 For starters, use Pd's preferences and/or your MIDI patchbay to hook up the
-EZ-AG to Pd's MIDI input and output #1, the control input of your DAW (if
-needed) to Pd's MIDI output #2, and finally the Guitar Wing (if you have it)
-to Pd's MIDI input and output #3. The patch is hard-wired to work like this,
-so unless you're prepared to edit the patch you'll need to follow this
-connection layout.
+EZ-AG (or whatever MIDI guitar you're using) to Pd's MIDI input and output #1,
+the control input of your DAW (if needed) to Pd's MIDI output #2, and finally
+the Guitar Wing (if you have it) to Pd's MIDI input and output #3. The patch
+is hard-wired to work like this, so unless you're prepared to edit the patch
+you'll need to follow this connection layout.
 
 The patch doesn't generate any sound of its own, it just outputs MIDI, so
 you'll also need a GM-compatible synthesizer which should be hooked up to Pd's
