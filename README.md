@@ -53,12 +53,12 @@ corresponding buttons on the EZ-AG itself (press SOUND SELECT and then +/-),
 but this will not show in the GUI controls of the patch.
 
 The latest version of the patch now also has some preliminary support for
-the [Jamstick+][]. Most of the patch has been left unchanged and will work
-just fine with the Jamstick+, but pitch bends are now passed through and the
+the [Jamstik+][]. Most of the patch has been left unchanged and will work
+just fine with the Jamstik+, but pitch bends are now passed through and the
 D-Pad key combinations Enter+Up/Down can be used to change instruments (GM
 patches).
 
-[Jamstick+]: https://jamstik.com/
+[Jamstik+]: https://jamstik.com/
 
 ## Setting Up
 
@@ -116,11 +116,11 @@ the device is on when the patch is loaded. In any case, you can also do this
 manually by pressing the TEMPO and VOLUME buttons at the same time and using
 the "-" button so that the EZ-AG's LED display shows "Etr".
 
-### Jamstick+ Setup
+### Jamstik+ Setup
 
-The Jamstick+ should work fine with the patch as is, using factory settings.
+The Jamstik+ should work fine with the patch as is, using factory settings.
 Just make sure that the device is in multi-channel mode (which it is by
-default). You may also want to use the Jamstick+ app to adjust the pick
+default). You may also want to use the Jamstik+ app to adjust the pick
 sensitivity settings to your liking (I have mine on the "Minimum" preset for
 best sensitivity, but your mileage may vary).
 
