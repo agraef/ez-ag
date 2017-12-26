@@ -4,21 +4,28 @@ Copyright (c) 2017 by Albert Gräf <aggraef@gmail.com>, licensed under the GPL
 v3 or later, please check the accompanying COPYING file for details. Sources
 are availble at <https://github.com/agraef/ez-ag>.
 
+## Introduction
+
 This is a little helper patch which aims to make it easier to use Yamaha's
 "learning guitar", the [Yamaha EZ-AG][], as a MIDI controller. It should also
 work with its sibling, the Yamaha EZ-EG (I haven't tested that since I don't
-own one of these). The patch also displays the strings and notes which are
-currently playing, which should be useful as visual feedback and for checking
-that the device is connected and working properly.
+own one of these). In fact, the patch most likely works with any kind of MIDI
+guitar that emits note data on MIDI channels 1-6 (the latest version of the
+patch also has some special support for the Jamstick+, see below). The patch
+also features some GUI elements to display the strings and notes which are
+currently playing, which is useful as visual feedback and for checking that
+the device is connected and working properly.
 
 ![EZ-AG patch](ez-ag-screenie.png)  
 
 [Yamaha EZ-AG]: https://www.bhphotovideo.com/c/product/353860-REG/Yamaha_EZAG_EZ_AG_Self_Teaching_Guitar.html
 
-Note that Yamaha doesn't list (let alone sell) these any more, but with some
-luck you'll be able to find one on Amazon or Ebay. There's an
-extensive [KVR thread][] about the EZ-AG and EZ-EG which you can refer to for
-further details.
+### The EZ-AG
+
+Unfortunately, Yamaha doesn't sell the EZ-AG/EG any more, but with some luck
+you'll be able to find one on Amazon or Ebay. There's an extensive
+[KVR thread][] about the EZ-AG and EZ-EG which you can refer to for further
+details.
 
 [KVR thread]: https://www.kvraudio.com/forum/viewtopic.php?f=4&t=41787
 
@@ -35,6 +42,8 @@ possible to simulate pitch bends via a sustain pedal (note that you'll have to
 hook up the pedal through a MIDI keyboard since the EZ-AG itself doesn't have
 a sustain pedal input).
 
+### The Guitar Wing
+
 If you have the [Livid Guitar Wing][], you can also do pitch bends using
 either the Wing's big fader (cc 3) or the uppermost drum pad (cc 36). The Wing
 will also let you change instruments (GM patches) and transpose by octaves
@@ -49,16 +58,21 @@ will give you the button and fader controls which the EZ-AG lacks. If you
 don't have the Wing, then you should still be able to do all these things by
 operating the corresponding GUI controls in the gwing subpatch, but it will be
 less convenient. Note that instrument sounds can also be changed using the
-corresponding buttons on the EZ-AG itself (press SOUND SELECT and then +/-),
-but this will not show in the GUI controls of the patch.
+corresponding buttons on the EZ-AG itself (press SOUND SELECT and then +/-).
 
-The latest version of the patch now also has some preliminary support for
-the [Jamstik+][]. Most of the patch has been left unchanged and will work
-just fine with the Jamstik+, but pitch bends are now passed through and the
-D-Pad key combinations Enter+Up/Down can be used to change instruments (GM
-patches).
+### The Jamstick+
+
+As already noted, the patch may well work with other MIDI guitars, as long as
+the device emits note data on MIDI channels 1-6, as most MIDI guitars do.
+This is true, in particular, for the [Jamstik+][], the latest edition of
+Zivix' nice little MIDI guitar featuring real guitar strings and built-in
+[MIDI BLE][] (MIDI over Bluetooth Low Energy) support. The latest version of
+the patch now has some special support for these devices, so that pitch bends
+are passed through and the D-Pad key combinations Enter+Up/Down of the
+Jamstik+ can be used to change instruments (GM patches).
 
 [Jamstik+]: https://jamstik.com/
+[MIDI BLE]: https://www.midi.org/specifications/item/bluetooth-le-midi
 
 ## Setting Up
 
@@ -150,12 +164,17 @@ these double notes can be set using the delay time argument of the
 "ez-notefilters" abstraction. The default of 150 msecs works for me, but if
 you have a very clean playing style then you might want to reduce this value.
 On the other hand, if your technique is even worse than mine then you might
-have to further increase the delay time.
+have to further increase the delay time. For other (non-Yamaha) devices you
+might want to disable these options and go with the plain note data emitted by
+the device, although keeping them enabled shouldn't do any harm either and
+might actually help depending on the MIDI guitar that's being used.
 
 The "pass through other MIDI" toggle causes all control and program change
-messages emitted by the EZ-AG to be passed through unchanged. In particular,
+messages emitted by the device to be passed through unchanged.  In particular,
 this lets you use the buttons on the EZ-AG to change the selected instrument
-sound.
+sound. If you have a device which generates actual pitch bend data, like the
+Jamstik+, it will be passed through as well. (This hopefully also works with
+the EZ-EG's whammy bar, but this hasn't been tested.)
 
 The "panic" button lets you stop all sounding MIDI notes immediately, provided
 that your MIDI synthesizer properly implements cc 123 (Fluidsynth does). This
@@ -191,14 +210,14 @@ be on by default. The provided functions are listed below.
   amounts of pressure on button 3 will translate to different pitch bend
   values. This is a bit harder to control than the big fader, but may be more
   convenient to do quick pitch bends.
-
+  
 - The second and third pads (buttons 4 and 5) can be used to transpose the
   MIDI note input from the EZ-AG (same as the +/-1 oct buttons in the patch).
   Note that this is independent from the TUNING button on the EZ-AG. Moreover,
   the EZ-AG automagically transposes notes depending on the instrument sound
   chosen with the SOUND SELECT button on the device, so that, e.g., if you
-  pick a bass sound on the EZ-EG then the note input from the EZ-AG will
-  already be an octave lower than normal.
+  pick a bass sound then the note input from the EZ-AG will already be an
+  octave lower than normal.
   
 - The fourth pad (button 6) is equivalent to clicking the "panic" button in
   the patch, i.e., it turns off all sounding notes.
