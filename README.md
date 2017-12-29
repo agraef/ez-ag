@@ -158,7 +158,7 @@ are currently playing in the style of a horizontal fretboard diagram
 finger positions on the fretboard using bullet points). By default, the
 fretboard display assumes a standard guitar tuning (E-A-D-G-B-E). If you have
 configured the EZ-AG to use a different tuning then you can recalibrate the
-display accordingly. To these ends, play each open string (at least) once and
+display accordingly. To these ends, pluck each open string (at least) once and
 then push the "tune" button above the fretboard subpatch.
 
 There are various settings in the patch you can fiddle with. First and
