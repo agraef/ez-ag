@@ -140,9 +140,10 @@ the "-" button so that the EZ-AG's LED display shows "Etr".
 
 The Jamstik+ should work fine with the patch as is, using factory settings.
 Just make sure that the device is in multi-channel mode (which it is by
-default). You may also want to use the Jamstik+ app to adjust the pick
-sensitivity settings to your liking (I have mine on the "Minimum" preset for
-best sensitivity, but your mileage may vary).
+default). You may also want to use the Jamstik+ app or the web interface
+at <https://play.jamstik.com> to adjust the pick sensitivity settings to your
+liking (I have mine on the "Minimum" preset for best sensitivity, but your
+mileage may vary).
 
 ## Usage
 
@@ -150,15 +151,15 @@ With those preparations all done and the EZ-AG turned on, just load the patch
 and start playing. You should see the strings and notes being played in the
 GUI, and hear the output from the patch through your MIDI synthesizer.
 
-Clicking on the fretboard object in the right upper corner of the patch opens
-a graphical display of the 12 frets of the EZ-AG showing the notes that are
-currently playing in the style of a horizontal fretboard diagram (indicating
-open and damped strings with "o" and "x" symbols on the left and finger
-positions on the fretboard using bullet points). By default, the fretboard
-display assumes a standard guitar tuning (E-A-D-G-B-E). If you have configured
-the EZ-AG to use a different tuning then you can recalibrate the display
-accordingly. To these ends, play each open string (at least) once and then
-push the "tune" button above the fretboard object.
+Clicking on the fretboard subpatch in the right upper corner of the patch
+opens a graphical display of the 12 frets of the EZ-AG showing the notes that
+are currently playing in the style of a horizontal fretboard diagram
+(indicating open and damped strings with "o" and "x" symbols on the left and
+finger positions on the fretboard using bullet points). By default, the
+fretboard display assumes a standard guitar tuning (E-A-D-G-B-E). If you have
+configured the EZ-AG to use a different tuning then you can recalibrate the
+display accordingly. To these ends, play each open string (at least) once and
+then push the "tune" button above the fretboard subpatch.
 
 There are various settings in the patch you can fiddle with. First and
 foremost, there are two toggles for the velocity threshold and the note
