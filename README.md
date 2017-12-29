@@ -115,7 +115,7 @@ respectively, and be done with it.
 
 You will probably want to leave local control enabled on the EZ-AG (it's the
 default) to get naturally-sounding hammer-ons and pull-offs. (Note that the
-EZ-AG doesn't do pull-offs to empty strings. That's a limitation of the device
+EZ-AG doesn't do pull-offs to open strings. That's a limitation of the device
 and so there's nothing the patch can do about it.) On the other hand, it may
 become easier to play chords if you turn local control off; this can only be
 done manually on the device by pressing the CAPO and TUNING buttons at the
