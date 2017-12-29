@@ -78,28 +78,34 @@ Jamstik+ can be used to change instruments (GM patches).
 
 You'll need the [Purr Data][] flavor of Pd to run this patch. You'll also
 need [Pd-Lua][] since some of the internal functionality of the patch is
-currently written in Lua. (There's a good chance that most of the essential
+currently written in Lua. (There's a good chance that the most essential
 functionality of the patch will work in vanilla Pd, too, if you have Pd-Lua
-installed, but this hasn't been tested. In any case making the patch work
-flawlessly with vanilla will most likely require some changes.)
+installed, but this hasn't been tested. Some parts of the patch like the
+graphical fretboard diagram do require Purr Data to work, though.)
 
 [Purr Data]: https://agraef.github.io/purr-data/
 [Pd-Lua]: https://github.com/agraef/pd-lua
 
-For starters, use Pd's preferences and/or your MIDI patchbay to hook up the
-EZ-AG (or whatever MIDI guitar you're using) to Pd's MIDI input and output #1,
-the control input of your DAW (if needed) to Pd's MIDI output #2, and finally
-the Guitar Wing (if you have it) to Pd's MIDI input and output #3. The patch
-is hard-wired to work like this, so unless you're prepared to edit the patch
-you'll need to follow this connection layout.
+To display the patch at the proper zoom level, you need to turn on the
+"save/load zoom level with patch" option in Purr Data's GUI preferences before
+loading the patch. Then use Purr Data's MIDI preferences and/or your MIDI
+patchbay to hook up the EZ-AG (or whatever MIDI guitar you're using) to Pd's
+MIDI input and output #1, the control input of your DAW (if needed) to Pd's
+MIDI output #2, and finally the Guitar Wing (if you have it) to Pd's MIDI
+input and output #3. The patch is hard-wired to work like this, so unless
+you're prepared to edit the patch you'll need to follow this connection
+layout.
 
 The patch doesn't generate any sound of its own, it just outputs MIDI, so
 you'll also need a GM-compatible synthesizer which should be hooked up to Pd's
-MIDI output #1. I recommend Qsynth/Fluidsynth for that purpose, but of course
-you can also use any GM-compatible synthesizer or a GM-compatible synth plugin
-in your favorite DAW. In the latter case you will want to route Pd's MIDI
-output #1 into your DAW (note that output #2 only carries the control data
-from the Wing if it's being passed through).
+MIDI output #1. I recommend [Qsynth][]/[Fluidsynth][], but of course you can
+also use any GM-compatible synthesizer or a GM-compatible synth plugin in your
+favorite DAW for that purpose. In the latter case you will want to route Pd's
+MIDI output #1 into your DAW (note that output #2 only carries the control
+data from the Wing if it's being passed through).
+
+[Qsynth]:https://qsynth.sourceforge.io/
+[Fluidsynth]: http://www.fluidsynth.org/
 
 For a minimum setup (no DAW control, no Guitar Wing) you can just hook up the
 EZ-AG and your MIDI synthesizer to Pd's first MIDI input and output,
@@ -143,6 +149,16 @@ best sensitivity, but your mileage may vary).
 With those preparations all done and the EZ-AG turned on, just load the patch
 and start playing. You should see the strings and notes being played in the
 GUI, and hear the output from the patch through your MIDI synthesizer.
+
+Clicking on the fretboard object in the right upper corner of the patch opens
+a graphical display of the 12 frets of the EZ-AG showing the notes that are
+currently playing in the style of a horizontal fretboard diagram (indicating
+open and damped strings with "o" and "x" symbols on the left and finger
+positions on the fretboard using bullet points). By default, the fretboard
+display assumes a standard guitar tuning (E-A-D-G-B-E). If you have configured
+the EZ-AG to use a different tuning then you can recalibrate the display
+accordingly. To these ends, play each open string (at least) once and then
+push the "tune" button above the fretboard object.
 
 There are various settings in the patch you can fiddle with. First and
 foremost, there are two toggles for the velocity threshold and the note
