@@ -203,6 +203,8 @@ fretboard diagram, indicating open and damped strings with "o" and "x" symbols
 to the left of the "nut" and finger positions on the fretboard using bullet
 points.
 
+![EZ-fretboard patch](ez-fretboard-screenie.png)  
+
 Note that the fretboard display has no way of knowing the actual tuning of the
 EZ-AG, so it assumes a standard guitar tuning (E3-A3-D4-G4-B4-E5) by default.
 If you have configured the EZ-AG to use a different tuning (such as, e.g.,
