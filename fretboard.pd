@@ -1,6 +1,6 @@
 #N struct fretboard-struct float x float y array a string-element;
 #N struct string-element float x float y float p float q float r;
-#N canvas 383 457 906 155.062 10;
+#N canvas 256 320 906 115.062 10;
 #X scalar fretboard-struct 15 21 \; 0 0 0 1 0 \; 0 10 0 1 0 \; 0 20
 0 1 0 \; 0 30 0 1 0 \; 0 40 0 1 0 \; 0 50 0 1 0 \; \;;
 #N canvas 434 110 1023 725.062 fretboard-struct 0;
