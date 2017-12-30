@@ -1,11 +1,12 @@
 #N struct fretboard-struct float x float y array a string-element;
-#N struct string-element float x float y float p float q float r;
+#N struct string-element float x float y float p float q float r float
+s;
 #N canvas 235 151 1137 545.062 10;
 #X obj 32 233 tgl 25 0 empty empty E 17 7 0 10 -261234 -1 -1 0 1;
 #X obj 74 233 tgl 25 0 empty empty A 17 7 0 10 -262130 -1 -1 0 1;
 #X obj 115 233 tgl 25 0 empty empty D 17 7 0 10 -204786 -1 -1 0 1;
 #X obj 157 233 tgl 25 0 empty empty G 17 7 0 10 -204800 -1 -1 0 1;
-#X obj 199 233 tgl 25 0 empty empty H 17 7 0 10 -203904 -1 -1 0 1;
+#X obj 199 233 tgl 25 0 empty empty B 17 7 0 10 -203904 -1 -1 0 1;
 #X obj 241 233 tgl 25 0 empty empty E 17 7 0 10 -232576 -1 -1 0 1;
 #X symbolatom 32 267 4 0 0 0 - - -, f 4;
 #X obj 32 187 ez-strings, f 35;

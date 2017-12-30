@@ -35,8 +35,8 @@
 #X msg 311 131 G;
 #X msg 321 141 G#;
 #X msg 331 151 A;
-#X msg 341 161 B;
-#X msg 351 171 H;
+#X msg 341 161 Bb;
+#X msg 351 171 B;
 #X msg 271 91 Eb;
 #X obj 241 194 symbol;
 #X obj 174 339 outlet;
