@@ -151,23 +151,7 @@ With those preparations all done and the EZ-AG turned on, just load the patch
 and start playing. You should see the strings and notes being played in the
 GUI, and hear the output from the patch through your MIDI synthesizer.
 
-Clicking on the fretboard subpatch in the right upper corner of the patch
-opens a graphical display of the 12 frets of the EZ-AG showing the notes that
-are currently playing in the style of a horizontal fretboard diagram. As
-usual, open and damped strings are indicated with "o" and "x" symbols to the
-left of the "nut" and finger positions on the fretboard using bullet points.
-
-Note that the fretboard display has no way of knowing the actual tuning of the
-EZ-AG, so it assumes a standard guitar tuning (E3-A3-D4-G4-B4-E5) by default.
-If you have configured the EZ-AG to use a different tuning (such as, e.g.,
-D-drop or 1 octave up or down) then some notes may fall below or above the
-displayed range and will be shown as grey "shadow" notes on the "nut" or the
-"bridge" in the fretboard diagram, respectively. In this case you can
-recalibrate the display so that it matches the EZ-AG's tuning. To these ends,
-pluck each open string (at least) once and then push the "tune" button above
-the fretboard subpatch. The display will then be adjusted accordingly.
-
-There are various other settings in the patch you can fiddle with. First and
+There are various settings in the patch you can fiddle with. First and
 foremost, there are two toggles for the velocity threshold and the note
 filtering, which should normally be enabled by default. You can turn these off
 to get the MIDI note data exactly as the EZ-AG sends it. Normally, you will
@@ -209,6 +193,26 @@ this can be used to emulate pitch bends if you turn on the corresponding
 toggle in the patch. This is a rather crude emulation (it quickly ramps up one
 semitone when pressing the pedal, and goes back to nominal pitch when
 releasing it); better control is provided through the Guitar Wing, see below.
+
+## Fretboard Display
+
+This is available as an accompanying patch EZ-fretboard.pd which needs to be
+opened separately in the same Pd instance as the main patch. It shows a
+graphical display of the 12 frets of the EZ-AG in the style of a horizontal
+fretboard diagram, indicating open and damped strings with "o" and "x" symbols
+to the left of the "nut" and finger positions on the fretboard using bullet
+points.
+
+Note that the fretboard display has no way of knowing the actual tuning of the
+EZ-AG, so it assumes a standard guitar tuning (E3-A3-D4-G4-B4-E5) by default.
+If you have configured the EZ-AG to use a different tuning (such as, e.g.,
+D-drop or 1 octave up or down) then some notes may fall below or above the
+displayed range and will be shown as grey "shadow" notes on the "nut" or the
+"bridge" in the fretboard diagram, respectively. In this case you can
+recalibrate the display so that it matches the EZ-AG's tuning. To these ends,
+pluck each open string (at least) once and then push the "tune" button on the
+right. Any notes played after pushing the "tune" button should now be
+displayed in the correct fret position corresponding to the new tuning.
 
 ## Guitar Wing Controls
 
