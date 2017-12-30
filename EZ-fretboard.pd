@@ -1,7 +1,7 @@
 #N struct fretboard-struct float x float y array a string-element;
 #N struct string-element float x float y float p float q float r float
 s;
-#N canvas 331 433 1028 126.062 10;
+#N canvas 336 427 1028 126.062 10;
 #X scalar fretboard-struct 15 21 \; 0 0 0 1 0 0 \; 0 10 0 1 0 0 \;
 0 20 0 1 0 0 \; 0 30 0 1 0 0 \; 0 40 0 1 0 0 \; 0 50 0 1 0 0 \; \;
 ;
@@ -280,10 +280,12 @@ float r, f 61;
 #X coords 0 -1 1 1 83 40 1 296 303;
 #X restore 623 26 pd ez-notein;
 #X obj 126 182 r ez-notein;
+#X obj 216 160 r ez-all-notes-off;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
 #X connect 5 0 3 0;
 #X connect 6 0 1 1;
 #X connect 8 0 1 1;
+#X connect 9 0 6 0;
 #X scroll 1;
