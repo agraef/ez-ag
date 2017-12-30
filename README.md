@@ -209,12 +209,12 @@ Note that the fretboard display has no way of knowing the actual tuning of the
 EZ-AG, so it assumes a standard guitar tuning (E3-A3-D4-G4-B4-E5) by default.
 If you have configured the EZ-AG to use a different tuning (such as, e.g.,
 D-drop or 1 octave up or down) then some notes may fall below or above the
-displayed range and will be shown as grey "shadow" notes on the "nut" or the
-"bridge" in the fretboard diagram, respectively. In this case you can
-recalibrate the display so that it matches the EZ-AG's tuning. To these ends,
-pluck each open string (at least) once and then push the "tune" button on the
-right. Any notes played after pushing the "tune" button should now be
-displayed in the correct fret position corresponding to the new tuning.
+displayed range and will be shown as grey "shadow" notes at the beginning and
+the end of the fretboard, respectively. In this case you can recalibrate the
+display so that it matches the EZ-AG's tuning. To these ends, pluck each open
+string (at least) once and then push the "tune" button on the right. Any notes
+played after pushing the "tune" button should now be displayed in the correct
+fret position corresponding to the new tuning.
 
 ## Guitar Wing Controls
 
