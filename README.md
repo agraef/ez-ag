@@ -222,9 +222,7 @@ The "gwing" subpatch provides support for Livid's Guitar Wing controller.
 There is a toggle in the subpatch to enable this functionality, which should
 be on by default. The provided functions are listed below.
 
-![Guitar Wing](wing.png)  
-
-- The big touch fader of the Wing (cc 3, fader 8 in the figure above) does
+- The big touch fader of the Wing (cc 3, fader 8 in the figure below) does
   pitch bends. It will automatically reset itself to zero as soon as you stop
   touching that fader. The radio button above the gwing patch lets you
   configure the maximum amount of pitch bend that you want to have. It
@@ -259,6 +257,8 @@ be on by default. The provided functions are listed below.
   
 - The remaining controls on the Wing aren't assigned right now, but might be
   in the future.
+
+![Guitar Wing](wing.png)  
 
 All this special processing can also be turned off with the "enable" toggle.
 Finally, you can also route the control data from the Wing to your DAW. To
